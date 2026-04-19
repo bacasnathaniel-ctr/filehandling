@@ -1,5 +1,5 @@
 
-# 1. Create a Python Program
+
 try:
     note = input("Enter a short note/message: ")
 
