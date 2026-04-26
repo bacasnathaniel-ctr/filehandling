@@ -1,23 +1,28 @@
 def main():
     try:
-
-        x = input("Enter username: ").strip()
-        if not x:
+        
+        username = input("Enter username: ").strip()
+        if not username:
             raise ValueError("Username cannot be empty.")
 
         age_input = input("Enter age: ").strip()
 
+    
         age = int(age_input)
 
         if age <= 0:
             raise ValueError("Age must be a positive number.")
 
+    
         with open("users.txt", "a") as file:
-            file.write(f"{x} - {age}\n")
+            file.write(f"{username} - {age}\n")
+
     except ValueError as ve:
         print(f"Input Error: {ve}")
+
     except Exception as e:
         print(f"Unexpected Error: {e}")
+
     finally:
     
         try:
@@ -28,5 +33,6 @@ def main():
             print("No users found yet.")
 
         print("System complete.")
+
 
 main()
